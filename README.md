@@ -1,8 +1,9 @@
 # Hackathon - Brand Name Similarity for Criteo
 
+ ![pic](./figures/presentation.png)
 ## Overview 
 
-This hackathon project aims to unify and standardize brand names for Criteo by computing similarity between brands. By combining multiple similarity metrics into a weighted approach, our solution can automatically group brands that share common online footprints. A key component of our project involves using API calls to perform web scraping—extracting the first five Google search links for each brand—to help determine if different brand name variations actually refer to the same entity.
+This hackathon project aims to unify and standardize brand names for Criteo. By combining multiple similarity metrics into a weighted approach, our solution can automatically group brands that share common online footprints. A key component of our project involves using API calls to perform web scraping—extracting the first five Google search links for each brand—to help determine if different brand name variations actually refer to the same entity.
 
 ## Motivation
 
@@ -21,27 +22,31 @@ By solving this problem, Criteo not only enhances its service offering to existi
 
 ## Technical Approach
 
-1. **Data Cleaning and Preprocessing**
+**1. Data Cleaning and Preprocessing**
 
 **Translation & Cleaning**:
-Our pipeline begins by cleaning the raw brand data. This involves translating text from Korean to English and removing special characters and extraneous text. 
-The cleaned data is then saved as a CSV file (<font color="blue">fully_cleaned.csv</font>), which serves as the foundation for all subsequent analyses.
+Our pipeline begins by cleaning the raw brand data in the jupyter notebook [data_cleaning.ipynd](https://github.com/claraferrax/Criteo-Hackathon/blob/main/data_cleaning.ipynb) . This involves translating text from Korean to English and removing special characters and extraneous text. 
+The cleaned data is then saved as a CSV file, which serves as the foundation for all subsequent analyses.
 
-2. **Similarity Computation**
+**2. Similarity Computation**
 
 Initial Similarity Analysis:
-The cleaned CSV is processed in the <font color="blue">similarity.ipynb</font> notebook, where we compute similarity between brand names using various metrics—such as fuzzy matching and Jaccard similarity. The final similarity values are then encapsulated in the <font color="blue">similarities.py</font> module, which offers easy-to-use functions for comparing both brand names and descriptions.
+The cleaned CSV is processed in the [similarity.ipynb](https://github.com/claraferrax/Criteo-Hackathon/blob/main/similarity.ipynb) notebook, where we compute similarity between brand names using various metrics—such as fuzzy matching and Jaccard similarity. The final similarity values are then encapsulated in the [similarities.py](https://github.com/claraferrax/Criteo-Hackathon/blob/main/similarities.py) module, which offers easy-to-use functions for comparing both brand names and descriptions.
 Weighted Similarity Computation:
 In the weighted_score.ipynb notebook, we apply a weighted similarity approach. This method aggregates similar sub-brands—such as grouping “Versace Jeans” and “Versace Kids” under the umbrella of “Versace”—by leveraging high similarity scores. The output is a DataFrame where brands with high internal similarity are clustered together.
 
-3. **API Integration and Data Enrichment**
+**3. API Integration and Data Enrichment**
 
 **Web Scraping & External Data:**
-After the initial similarity computations, <font color="blue">Hackathon_Brand_added_details.ipynb</font> calls external APIs to fetch additional data, including product descriptions, images, and URLs for each brand. This enrichment phase adds a new dimension to our dataset.
+After the initial similarity computations, [Hackathon_Brand_added_details.ipynb](https://github.com/claraferrax/Criteo-Hackathon/blob/main/Hackathon_Brand_added_details.ipynb) calls external APIs to fetch additional data, including product descriptions, images, and URLs for each brand. This enrichment phase adds a new dimension to our dataset.
 Advanced Brand Unification:
 With the added context from the API (e.g., product details and online content), our process goes a step further: even if brand names differ significantly in text (for example, “HP” versus “Hewlett Packard”), the enriched data helps us identify and merge them as the same entity.
 
-4. **Future possible imporvments**
+
+### Result Vizualization:
+ ![Result](./figures/vizualization.gif)
+
+**4. Future possible imporvments**
    
  **Composite Similarity Metric:** In future iterations, we could enhance our model by assigning specific weights to the comparisons of various attributes—such as links, images, descriptions, and brand names. By integrating these weighted comparisons, we will compute a final composite similarity metric. Once the composite metric is calculated, brands with similarity scores exceeding a predefined threshold will be grouped together. This will enable even more accurate brand unification, ensuring that different representations of the same brand (like abbreviations and full names) are correctly merged.
 
@@ -81,7 +86,7 @@ With the added context from the API (e.g., product details and online content), 
 
 ## Team
 
-**AL NABBOUT Christina**
+**AL NABBOUT Christina** 
 
 **BOUSQUET Capucine**
 
