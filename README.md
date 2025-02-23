@@ -1,4 +1,4 @@
-# Hackathon - Brand Name Similarity for Criteo
+# Hackathon - ESCP x Criteo
 
  ![pic](./figures/presentation.png)
 ## Overview 
