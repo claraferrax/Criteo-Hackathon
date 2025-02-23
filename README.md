@@ -25,15 +25,15 @@ By solving this problem, Criteo not only enhances its service offering to existi
 **1. Data Cleaning and Preprocessing**
 
 **Translation & Cleaning**:
-Our pipeline begins by cleaning the raw brand data in the jupyter notebook [data_cleaning.ipynd](https://github.com/claraferrax/Criteo-Hackathon/blob/main/data_cleaning.ipynb) . This involves translating text from Korean to English and removing special characters and extraneous text. 
+Our pipeline begins by cleaning the raw brand data in the jupyter notebook [data_cleaning.ipynd](./data_cleaning.ipynb) . This involves translating text from Korean to English and removing special characters and extraneous text. 
 The cleaned data is then saved as a CSV file, which serves as the foundation for all subsequent analyses.
 
 **2. Similarity Computation**
 
 Initial Similarity Analysis:
-The cleaned CSV is processed in the [similarity.ipynb](https://github.com/claraferrax/Criteo-Hackathon/blob/main/similarity.ipynb) notebook, where we compute similarity between brand names using various metrics—such as fuzzy matching and Jaccard similarity. The final similarity values are then encapsulated in the [similarities.py](https://github.com/claraferrax/Criteo-Hackathon/blob/main/similarities.py) module, which offers easy-to-use functions for comparing both brand names and descriptions.
+The cleaned CSV is processed in the [similarity.ipynb](./similarity.ipynb) notebook, where we compute similarity between brand names using various metrics—such as fuzzy matching and Jaccard similarity. The final similarity values are then encapsulated in the [similarities.py](./similarities.py) module, which offers easy-to-use functions for comparing both brand names and descriptions.
 Weighted Similarity Computation:
-In the [weighted_score.ipynb](https://github.com/claraferrax/Criteo-Hackathon/blob/main/weighted_score.ipynb) notebook, we apply a weighted similarity approach. This method aggregates similar sub-brands—such as grouping “Versace Jeans” and “Versace Kids” under the umbrella of “Versace”—by leveraging high similarity scores. The output is a DataFrame where brands with high internal similarity are clustered together.
+In the [weighted_score.ipynb](./weighted_score.ipynb) notebook, we apply a weighted similarity approach. This method aggregates similar sub-brands—such as grouping “Versace Jeans” and “Versace Kids” under the umbrella of “Versace”—by leveraging high similarity scores. The output is a DataFrame where brands with high internal similarity are clustered together.
 
 **3. API Integration and Data Enrichment**
 
