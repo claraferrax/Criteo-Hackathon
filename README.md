@@ -3,7 +3,7 @@
  ![pic](./figures/presentation.png)
 ## Overview 
 
-This hackathon project aims to unify and standardize brand names for Criteo. By combining multiple similarity metrics into a weighted approach, our solution can automatically group brands that share common online footprints. A key component of our project involves using API calls to perform web scraping—extracting the first five Google search links for each brand—to help determine if different brand name variations actually refer to the same entity.
+This hackathon project aims to unify and standardize brand names for Criteo. By combining multiple similarity metrics into a weighted approach, our solution can automatically group brands that share common online footprints. A key component of our project involves using API calls to perform web scraping—extracting the first five Google search links for each brand—to help determine if different brand name variations actually refer to the same entity. 
 
 ## Motivation
 
